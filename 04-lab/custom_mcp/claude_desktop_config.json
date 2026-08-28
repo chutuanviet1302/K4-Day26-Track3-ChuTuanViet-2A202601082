@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "order-log-system": {
+      "command": "python",
+      "args": [
+        "d:/Program Files/Downloads/2026 work/ai in action/lab/lab26/K4-Day26-Track3-ChuTuanViet-2A202601082/04-lab/custom_mcp/server.py"
+      ],
+      "env": {
+        "PYTHONIOENCODING": "utf-8"
+      }
+    }
+  }
+}

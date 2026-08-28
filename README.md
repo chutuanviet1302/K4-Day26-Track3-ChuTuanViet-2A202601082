@@ -18,13 +18,21 @@ day26-mcp/
 │   ├── weather_server.py
 │   └── weather_client.py
 │
-└── 03-production/           ← Bước 3: Auth, Tool Registry, Versioning
-    ├── README.md
-    ├── auth_server.py
-    ├── auth_client.py
-    ├── registry.json
-    ├── registry_client.py
-    └── versioned_server.py
+├── 03-production/           ← Bước 3: Auth, Tool Registry, Versioning
+│   ├── README.md
+│   ├── auth_server.py
+│   ├── auth_client.py
+│   ├── registry.json
+│   ├── registry_client.py
+│   └── versioned_server.py
+│
+├── my-mcp-server/          ← Lab 04 Assignment Submission (Bài Dễ, Trung Bình, Khó)
+│   ├── README.md           ← Hướng dẫn chạy & tài liệu chi tiết bài nộp
+│   ├── server.py           ← Custom MCP Server (Orders & System Logs)
+│   ├── test_stdio_client.py
+│   ├── test_auth_client.py
+│   ├── test_versioned_client.py
+│   └── claude_desktop_config.json
 ```
 
 ## Quick start
