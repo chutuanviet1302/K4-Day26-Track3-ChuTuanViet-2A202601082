@@ -31,6 +31,21 @@ MCP Server cung cấp các tools thực tế sau:
 
 ---
 
+## 🖥️ Giao diện Web Trực Quan (Streamlit Dashboard)
+
+Để kiểm thử các test case một cách trực quan qua giao diện đồ họa Web UI:
+
+```bash
+python -m streamlit run app.py
+```
+Giao diện sẽ tự động mở tại `http://localhost:8501` hỗ trợ:
+1. **Tra cứu Đơn hàng (v1 & v2)**: Chọn đơn hàng, xem card chi tiết, danh sách sản phẩm và lịch sử chuyển trạng thái.
+2. **Nhật ký Hệ thống**: Lọc log lỗi theo cấp độ (`ERROR`, `WARN`, `INFO`) và từ khoá.
+3. **Authentication Tester**: Gửi request HTTP test Token đúng, Token sai (401 Unauthorized), và Missing Token.
+4. **Server Metadata Resource**: Xem nội dung `server://info` công bố capabilities & deprecated tools.
+
+---
+
 ## ⚡ Bước 3: Cách Chạy Server
 
 ### 1. Chế độ stdio (Mặc định cho Claude Code / CLI MCP Client)
