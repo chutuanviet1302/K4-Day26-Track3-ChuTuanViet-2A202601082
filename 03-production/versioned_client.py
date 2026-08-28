@@ -4,6 +4,10 @@ import asyncio
 import json
 import sys
 
+# Hỗ trợ hiển thị UTF-8 / Emoji trên Windows Console
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8")
+
 from mcp import ClientSession, StdioServerParameters
 from mcp.client.stdio import stdio_client
 

@@ -2,11 +2,16 @@ from typing import Any
 import asyncio
 import httpx
 import os
-from mcp.server.fastmcp import FastMCP
+import sys
+from mcp.server.mcpserver import MCPServer
 
-# Initialize FastMCP server
+# Hỗ trợ hiển thị UTF-8 / Emoji trên Windows Console
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8")
+
+# Initialize MCPServer
 port = int(os.getenv("PORT", 8085))
-mcp = FastMCP("weather", host="0.0.0.0", port=port)
+mcp = MCPServer("weather")
 
 # Constants
 WEATHERAPI_BASE = "https://api.weatherapi.com/v1"
@@ -146,7 +151,7 @@ if __name__ == "__main__":
     
     if is_cloud_run or is_standalone:
         print(f"🚀 Starting MCP server on http://0.0.0.0:{port}/mcp")
-        mcp.run(transport="streamable-http")
+        mcp.run(transport="streamable-http", host="0.0.0.0", port=port)
     else:
         print("Starting FastMCP server in stdio mode for local client", file=sys.stderr)
         mcp.run()
