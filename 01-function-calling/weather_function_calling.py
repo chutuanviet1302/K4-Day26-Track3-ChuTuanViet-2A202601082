@@ -9,10 +9,20 @@ Cách chạy:
     python weather_function_calling.py
 """
 
+import sys
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+# Hỗ trợ UTF-8 / Emoji trên Windows Console
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8")
+
 from google import genai
 from google.genai import types
 
-client = genai.Client()
+client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
 
 MODEL = "gemini-2.5-flash"
 

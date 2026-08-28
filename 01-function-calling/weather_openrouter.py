@@ -12,6 +12,9 @@ import json
 import os
 import sys
 import httpx
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Hỗ trợ hiển thị UTF-8 / Emoji trên Windows Console
 if hasattr(sys.stdout, "reconfigure"):

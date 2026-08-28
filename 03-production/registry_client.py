@@ -91,9 +91,14 @@ async def connect_and_call(match: dict, tool_args: dict) -> str:
     tool_name = match["tool"]
 
     if server.get("transport") == "stdio":
+        server_dir = Path(__file__).parent
+        resolved_args = [
+            str((server_dir / arg).resolve()) if arg.endswith(".py") else arg
+            for arg in server["args"]
+        ]
         params = StdioServerParameters(
             command=sys.executable,
-            args=server["args"],
+            args=resolved_args,
         )
         async with stdio_client(params) as (read, write):
             async with ClientSession(read, write) as session:
