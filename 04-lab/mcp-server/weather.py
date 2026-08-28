@@ -17,6 +17,10 @@ mcp = MCPServer("weather")
 WEATHERAPI_BASE = "https://api.weatherapi.com/v1"
 USER_AGENT = "weather-app/1.0"
 
+from dotenv import load_dotenv
+
+load_dotenv()
+
 # Get API key from environment variable
 API_KEY = os.getenv("WEATHERAPI_KEY")
 
